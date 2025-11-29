@@ -1,7 +1,7 @@
 name: skibidi_roast
-description: "A new Flutter project."
+description: "SkibidiRoast 😎🔥 is a fun app where users upload images 📸 and get instant, AI-generated roasts 🤖💥. It’s a fun, interactive way to see witty, playful burns 😏🔥 tailored to your photos, giving users a hilarious 😂 and shareable 🤳 experience."
 publish_to: 'none'
-version: 0.1.0
+version: 1.0.0+1
 
 environment:
   sdk: ^3.8.1
