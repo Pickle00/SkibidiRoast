@@ -18,7 +18,7 @@ class SkibidiRoastApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routerConfig: appRouter.router,
       theme: ThemeData(
-        splashColor: Colors.grey.withOpacity(0.2),
+        splashColor: Colors.grey.withValues(alpha: 0.2),
         appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
         brightness: Brightness.light,
         scaffoldBackgroundColor: Colors.white,
