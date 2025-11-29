@@ -43,12 +43,12 @@ jobs:
 
       # 7. Build APK (Android)
       - name: Build APK
-        run: flutter build apk --release
+        run: flutter build apk --release --out=build/app/outputs/flutter-apk/SkibidiRoast.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: app-release.apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          name: SkibidiRoast.apk
+          path: build/app/outputs/flutter-apk/SkibidiRoast.apk
 
 
