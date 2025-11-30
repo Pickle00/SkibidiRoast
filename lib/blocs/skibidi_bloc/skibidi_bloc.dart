@@ -72,7 +72,7 @@ Roast this person in the photo as if you are speaking directly to them. 💥""";
       );
       emit(SkibidiRoastGenerated(response));
     } catch (e) {
-      emit(SkibidiError('Something went wrong'));
+      emit(SkibidiError(e.toString()));
     }
   }
 }
