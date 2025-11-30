@@ -41,12 +41,13 @@ flutter_launcher_icons:
 
 flutter_native_splash:
   color: "#FBF3F0"
-  image: assets/icons/app_icon.png  # Create this 512x512 PNG
+  image: assets/icons/splash_icon.png
   android: true
+  android_gravity: center
   ios: true
   android_12:
     color: "#FBF3F0"
-    image: assets/icons/app_icon.png
+    image: assets/icons/splash_icon.png
 
 flutter:
   uses-material-design: true
