@@ -1,10 +1,12 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:skibidi_roast/blocs/skibidi_bloc/skibidi_bloc.dart';
+import 'package:skibidi_roast/constants.dart';
 import 'package:skibidi_roast/routes/route_names.dart';
 import 'package:skibidi_roast/screens/home/widget/action_button.dart';
 import 'package:skibidi_roast/service/image_helper.dart';
@@ -20,6 +22,16 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   ValueNotifier<File?> selectedImage = ValueNotifier(null);
+  String uploadRoast = '';
+  String imageRoast = '';
+
+  @override
+  void initState() {
+    super.initState();
+    uploadRoast =
+        roastUploadPrompts[Random().nextInt(roastUploadPrompts.length)];
+    imageRoast = postUploadPrompts[Random().nextInt(postUploadPrompts.length)];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                     const SizedBox(height: 24),
                                     const Text(
-                                      'Show Me Your Mug',
+                                      'Drop Your Selfie Here',
                                       style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.w600,
@@ -130,13 +142,19 @@ class _HomeScreenState extends State<HomeScreen> {
 
                   const SizedBox(height: 32),
 
-                  const Text(
-                    'Give our AI your best shot.',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.black,
-                    ),
+                  ValueListenableBuilder(
+                    valueListenable: selectedImage,
+                    builder: (context, value, child) {
+                      return Text(
+                        textAlign: TextAlign.center,
+                        selectedImage.value == null ? uploadRoast : imageRoast,
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.black,
+                        ),
+                      );
+                    },
                   ),
 
                   const SizedBox(height: 12),

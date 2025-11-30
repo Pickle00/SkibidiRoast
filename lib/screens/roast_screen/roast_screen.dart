@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skibidi_roast/blocs/skibidi_bloc/skibidi_bloc.dart';
+import 'package:skibidi_roast/screens/roast_screen/cooking.dart';
 import 'package:skibidi_roast/theme/app_colors.dart';
 
 class RoastScreen extends StatefulWidget {
@@ -33,7 +34,7 @@ class _RoastScreenState extends State<RoastScreen> {
       builder: (context, state) {
         if (state is SkibidiCookingRoast) {
           return Scaffold(
-            body: const Center(child: CircularProgressIndicator()),
+            body: CookingScreen(),
           );
         }
         if (state is SkibidiRoastGenerated) {
@@ -47,7 +48,7 @@ class _RoastScreenState extends State<RoastScreen> {
             backgroundColor: AppColors.white,
             elevation: 0,
             leading: IconButton(
-              icon: const Icon(Icons.arrow_back, color: Colors.black),
+              icon: const Icon(Icons.arrow_back, color: AppColors.black),
               onPressed: () => Navigator.pop(context),
             ),
             title: const Text(
@@ -105,7 +106,14 @@ class _RoastScreenState extends State<RoastScreen> {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(24),
                     ),
-                    child: Text(roast),
+                    child: Text(
+                      roast,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
                   ),
 
                   const SizedBox(height: 24),
