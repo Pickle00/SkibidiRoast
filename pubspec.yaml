@@ -34,20 +34,20 @@ flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/icons/app_icon.png"
-  adaptive_icon_background: "assets/icons/app_icon.png"
+  adaptive_icon_background: "#FF3B30"
   adaptive_icon_foreground: "assets/icons/app_icon.png"
   min_sdk_android: 21
   remove_alpha_ios: true
 
 flutter_native_splash:
-  color: "#FBF3F0"
-  image: assets/icons/splash_icon.png
+  color: "#FF3B30"
+  image: assets/icons/main_icon.png
   android: true
   android_gravity: center
   ios: true
   android_12:
-    color: "#FBF3F0"
-    image: assets/icons/splash_icon.png
+    color: "#FF3B30"
+    image: assets/icons/main_icon.png
 
 flutter:
   uses-material-design: true

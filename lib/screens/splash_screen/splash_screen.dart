@@ -23,13 +23,11 @@ class SplashScreen extends StatelessWidget {
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                   ),
-                ]
-                ,
+                ],
               ),
-              child: const Icon(
-                Icons.local_fire_department,
-                size: 70,
-                color: Colors.white,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(28),
+                child: Image.asset('assets/icons/app_icon.png'),
               ),
             ),
             const SizedBox(height: 40),
