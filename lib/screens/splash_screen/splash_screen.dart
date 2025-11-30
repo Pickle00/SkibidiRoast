@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skibidi_roast/theme/app_colors.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -15,11 +16,11 @@ class SplashScreen extends StatelessWidget {
               width: 120,
               height: 120,
               decoration: BoxDecoration(
-                color: const Color(0xFFFF4433),
+                color: AppColors.primary,
                 borderRadius: BorderRadius.circular(28),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFFFF4433).withValues(alpha: 0.3),
+                    color: AppColors.primary.withValues(alpha: 0.3),
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                   ),
@@ -30,8 +31,9 @@ class SplashScreen extends StatelessWidget {
                 child: Image.asset('assets/icons/app_icon.png'),
               ),
             ),
+
             const SizedBox(height: 40),
-            // App Name
+
             const Text(
               'SkibidiRoast',
               style: TextStyle(
@@ -41,8 +43,9 @@ class SplashScreen extends StatelessWidget {
                 letterSpacing: -0.5,
               ),
             ),
+
             const SizedBox(height: 12),
-            // Tagline
+
             const Text(
               'Get ready to get roasted!',
               style: TextStyle(

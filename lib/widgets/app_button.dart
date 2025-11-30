@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skibidi_roast/theme/app_colors.dart';
 
 class RoastButton extends StatelessWidget {
   final String text;
@@ -16,7 +17,7 @@ class RoastButton extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
-    this.backgroundColor = const Color(0xFFF48C25),
+    this.backgroundColor = AppColors.primary,
     this.textColor = Colors.white,
     this.icon,
     this.showIcon = true,

@@ -33,9 +33,7 @@ class _RoastScreenState extends State<RoastScreen> {
       },
       builder: (context, state) {
         if (state is SkibidiCookingRoast) {
-          return Scaffold(
-            body: CookingScreen(),
-          );
+          return Scaffold(body: CookingScreen());
         }
         if (state is SkibidiRoastGenerated) {
           roast = state.roast;
@@ -152,7 +150,7 @@ class _RoastScreenState extends State<RoastScreen> {
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.orange[600],
+                        backgroundColor: AppColors.primary,
                         foregroundColor: Colors.white,
                         padding: const EdgeInsets.symmetric(vertical: 18),
                         shape: RoundedRectangleBorder(
@@ -172,7 +170,7 @@ class _RoastScreenState extends State<RoastScreen> {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
-                        color: Colors.orange[600],
+                        color: AppColors.primary,
                       ),
                     ),
                   ),
