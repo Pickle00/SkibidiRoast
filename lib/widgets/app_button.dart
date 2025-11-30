@@ -45,15 +45,13 @@ class RoastButton extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            Expanded(
-              child: Center(
-                child: Text(
-                  text,
-                  style: TextStyle(
-                    fontSize: fontSize,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 0.5,
-                  ),
+            Center(
+              child: Text(
+                text,
+                style: TextStyle(
+                  fontSize: fontSize,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 0.5,
                 ),
               ),
             ),
