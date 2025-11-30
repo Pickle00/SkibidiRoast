@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skibidi_roast/main_helper/bloc_provider.dart';
 import 'package:skibidi_roast/routes/app_router.dart';
 import 'package:skibidi_roast/service/storage_service.dart';
 
@@ -14,16 +16,19 @@ class SkibidiRoastApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppRouter appRouter = AppRouter();
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      routerConfig: appRouter.router,
-      theme: ThemeData(
-        splashColor: Colors.grey.withValues(alpha: 0.2),
-        appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
-        brightness: Brightness.light,
-        scaffoldBackgroundColor: Colors.white,
-        colorScheme: const ColorScheme.light(surface: Colors.white),
-        useMaterial3: true,
+    return MultiBlocProvider(
+      providers: blocProviders,
+      child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        routerConfig: appRouter.router,
+        theme: ThemeData(
+          splashColor: Colors.grey.withValues(alpha: 0.2),
+          appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
+          brightness: Brightness.light,
+          scaffoldBackgroundColor: Colors.white,
+          colorScheme: const ColorScheme.light(surface: Colors.white),
+          useMaterial3: true,
+        ),
       ),
     );
   }

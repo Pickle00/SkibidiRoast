@@ -21,7 +21,7 @@ List<GoRoute> buildRoute() {
     ),
     GoRoute(
       path: RoutePath.yourAIRoast,
-      builder: (context, state) => const RoastScreen(),
+      builder: (context, state) => RoastScreen(roast: state.extra as String),
     ),
   ];
 }

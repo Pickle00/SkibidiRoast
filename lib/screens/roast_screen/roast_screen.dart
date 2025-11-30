@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class RoastScreen extends StatefulWidget {
-  const RoastScreen({super.key});
+  final String roast;
+  const RoastScreen({super.key, required this.roast});
 
   @override
   State<RoastScreen> createState() => _RoastScreenState();
@@ -68,35 +69,7 @@ class _RoastScreenState extends State<RoastScreen> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(24),
                 ),
-                child: RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    style: const TextStyle(
-                      fontSize: 16,
-                      height: 1.5,
-                      color: Colors.black,
-                    ),
-                    children: [
-                      const TextSpan(
-                        text:
-                            'You look like you tried to download a personality and the ',
-                      ),
-                      TextSpan(
-                        text: 'file got corrupted.',
-                        style: TextStyle(
-                          color: Colors.orange[600],
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      const TextSpan(text: ' At least your face is an '),
-                      const TextSpan(
-                        text: 'error',
-                        style: TextStyle(fontStyle: FontStyle.italic),
-                      ),
-                      const TextSpan(text: ' worth looking at.'),
-                    ],
-                  ),
-                ),
+                child: Text(widget.roast),
               ),
 
               const SizedBox(height: 24),
