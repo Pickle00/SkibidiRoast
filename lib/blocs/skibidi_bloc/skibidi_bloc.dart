@@ -70,9 +70,9 @@ Roast this person in the photo as if you are speaking directly to them. 💥""";
       final String response = await GeminiApiRepo().generateContent(
         geminiModel,
       );
-      emit(SkibidiRoastGenerated(response));
+      emit(SkibidiRoastGenerated(response, image));
     } catch (e) {
-      emit(SkibidiError(e.toString()));
+      emit(SkibidiError(e.toString(),));
     }
   }
 }

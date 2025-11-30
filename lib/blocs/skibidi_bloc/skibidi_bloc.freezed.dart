@@ -331,21 +331,21 @@ mixin _$SkibidiState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() skibidiCookingRoast,
-    required TResult Function(String roast) skibidiRoastGenerated,
+    required TResult Function(String roast, File image) skibidiRoastGenerated,
     required TResult Function(String error) skibidiError,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? skibidiCookingRoast,
-    TResult? Function(String roast)? skibidiRoastGenerated,
+    TResult? Function(String roast, File image)? skibidiRoastGenerated,
     TResult? Function(String error)? skibidiError,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? skibidiCookingRoast,
-    TResult Function(String roast)? skibidiRoastGenerated,
+    TResult Function(String roast, File image)? skibidiRoastGenerated,
     TResult Function(String error)? skibidiError,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
@@ -441,7 +441,7 @@ class _$InitialImpl implements Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() skibidiCookingRoast,
-    required TResult Function(String roast) skibidiRoastGenerated,
+    required TResult Function(String roast, File image) skibidiRoastGenerated,
     required TResult Function(String error) skibidiError,
   }) {
     return initial();
@@ -452,7 +452,7 @@ class _$InitialImpl implements Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? skibidiCookingRoast,
-    TResult? Function(String roast)? skibidiRoastGenerated,
+    TResult? Function(String roast, File image)? skibidiRoastGenerated,
     TResult? Function(String error)? skibidiError,
   }) {
     return initial?.call();
@@ -463,7 +463,7 @@ class _$InitialImpl implements Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? skibidiCookingRoast,
-    TResult Function(String roast)? skibidiRoastGenerated,
+    TResult Function(String roast, File image)? skibidiRoastGenerated,
     TResult Function(String error)? skibidiError,
     required TResult orElse(),
   }) {
@@ -562,7 +562,7 @@ class _$SkibidiCookingRoastImpl implements SkibidiCookingRoast {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() skibidiCookingRoast,
-    required TResult Function(String roast) skibidiRoastGenerated,
+    required TResult Function(String roast, File image) skibidiRoastGenerated,
     required TResult Function(String error) skibidiError,
   }) {
     return skibidiCookingRoast();
@@ -573,7 +573,7 @@ class _$SkibidiCookingRoastImpl implements SkibidiCookingRoast {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? skibidiCookingRoast,
-    TResult? Function(String roast)? skibidiRoastGenerated,
+    TResult? Function(String roast, File image)? skibidiRoastGenerated,
     TResult? Function(String error)? skibidiError,
   }) {
     return skibidiCookingRoast?.call();
@@ -584,7 +584,7 @@ class _$SkibidiCookingRoastImpl implements SkibidiCookingRoast {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? skibidiCookingRoast,
-    TResult Function(String roast)? skibidiRoastGenerated,
+    TResult Function(String roast, File image)? skibidiRoastGenerated,
     TResult Function(String error)? skibidiError,
     required TResult orElse(),
   }) {
@@ -644,7 +644,7 @@ abstract class _$$SkibidiRoastGeneratedImplCopyWith<$Res> {
     $Res Function(_$SkibidiRoastGeneratedImpl) then,
   ) = __$$SkibidiRoastGeneratedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String roast});
+  $Res call({String roast, File image});
 }
 
 /// @nodoc
@@ -660,13 +660,17 @@ class __$$SkibidiRoastGeneratedImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? roast = null}) {
+  $Res call({Object? roast = null, Object? image = null}) {
     return _then(
       _$SkibidiRoastGeneratedImpl(
         null == roast
             ? _value.roast
             : roast // ignore: cast_nullable_to_non_nullable
                   as String,
+        null == image
+            ? _value.image
+            : image // ignore: cast_nullable_to_non_nullable
+                  as File,
       ),
     );
   }
@@ -675,14 +679,16 @@ class __$$SkibidiRoastGeneratedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SkibidiRoastGeneratedImpl implements SkibidiRoastGenerated {
-  const _$SkibidiRoastGeneratedImpl(this.roast);
+  const _$SkibidiRoastGeneratedImpl(this.roast, this.image);
 
   @override
   final String roast;
+  @override
+  final File image;
 
   @override
   String toString() {
-    return 'SkibidiState.skibidiRoastGenerated(roast: $roast)';
+    return 'SkibidiState.skibidiRoastGenerated(roast: $roast, image: $image)';
   }
 
   @override
@@ -690,11 +696,12 @@ class _$SkibidiRoastGeneratedImpl implements SkibidiRoastGenerated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SkibidiRoastGeneratedImpl &&
-            (identical(other.roast, roast) || other.roast == roast));
+            (identical(other.roast, roast) || other.roast == roast) &&
+            (identical(other.image, image) || other.image == image));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, roast);
+  int get hashCode => Object.hash(runtimeType, roast, image);
 
   /// Create a copy of SkibidiState
   /// with the given fields replaced by the non-null parameter values.
@@ -713,10 +720,10 @@ class _$SkibidiRoastGeneratedImpl implements SkibidiRoastGenerated {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() skibidiCookingRoast,
-    required TResult Function(String roast) skibidiRoastGenerated,
+    required TResult Function(String roast, File image) skibidiRoastGenerated,
     required TResult Function(String error) skibidiError,
   }) {
-    return skibidiRoastGenerated(roast);
+    return skibidiRoastGenerated(roast, image);
   }
 
   @override
@@ -724,10 +731,10 @@ class _$SkibidiRoastGeneratedImpl implements SkibidiRoastGenerated {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? skibidiCookingRoast,
-    TResult? Function(String roast)? skibidiRoastGenerated,
+    TResult? Function(String roast, File image)? skibidiRoastGenerated,
     TResult? Function(String error)? skibidiError,
   }) {
-    return skibidiRoastGenerated?.call(roast);
+    return skibidiRoastGenerated?.call(roast, image);
   }
 
   @override
@@ -735,12 +742,12 @@ class _$SkibidiRoastGeneratedImpl implements SkibidiRoastGenerated {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? skibidiCookingRoast,
-    TResult Function(String roast)? skibidiRoastGenerated,
+    TResult Function(String roast, File image)? skibidiRoastGenerated,
     TResult Function(String error)? skibidiError,
     required TResult orElse(),
   }) {
     if (skibidiRoastGenerated != null) {
-      return skibidiRoastGenerated(roast);
+      return skibidiRoastGenerated(roast, image);
     }
     return orElse();
   }
@@ -785,10 +792,11 @@ class _$SkibidiRoastGeneratedImpl implements SkibidiRoastGenerated {
 }
 
 abstract class SkibidiRoastGenerated implements SkibidiState {
-  const factory SkibidiRoastGenerated(final String roast) =
+  const factory SkibidiRoastGenerated(final String roast, final File image) =
       _$SkibidiRoastGeneratedImpl;
 
   String get roast;
+  File get image;
 
   /// Create a copy of SkibidiState
   /// with the given fields replaced by the non-null parameter values.
@@ -869,7 +877,7 @@ class _$SkibidiErrorImpl implements SkibidiError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() skibidiCookingRoast,
-    required TResult Function(String roast) skibidiRoastGenerated,
+    required TResult Function(String roast, File image) skibidiRoastGenerated,
     required TResult Function(String error) skibidiError,
   }) {
     return skibidiError(error);
@@ -880,7 +888,7 @@ class _$SkibidiErrorImpl implements SkibidiError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? skibidiCookingRoast,
-    TResult? Function(String roast)? skibidiRoastGenerated,
+    TResult? Function(String roast, File image)? skibidiRoastGenerated,
     TResult? Function(String error)? skibidiError,
   }) {
     return skibidiError?.call(error);
@@ -891,7 +899,7 @@ class _$SkibidiErrorImpl implements SkibidiError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? skibidiCookingRoast,
-    TResult Function(String roast)? skibidiRoastGenerated,
+    TResult Function(String roast, File image)? skibidiRoastGenerated,
     TResult Function(String error)? skibidiError,
     required TResult orElse(),
   }) {
