@@ -1,4 +1,4 @@
-package com.example.skibidi_roast
+package com.bikal.skibidiroast
 
 import io.flutter.embedding.android.FlutterActivity
 

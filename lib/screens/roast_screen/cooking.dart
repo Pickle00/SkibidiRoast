@@ -7,16 +7,22 @@ class CookingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Lottie.asset('assets/animations/cooking.json', width: 500, height: 500),
-        Text(
-          'Cooking you up...',
-          style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-        ),
-      ],
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Lottie.asset(
+            'assets/animations/cooking.json',
+            width: 500,
+            height: 500,
+          ),
+          Text(
+            'Cooking you up...',
+            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
     );
   }
 }
